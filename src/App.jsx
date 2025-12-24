@@ -1,10 +1,22 @@
-import React from 'react'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import RootLayout from './layouts/RootLayout'
+import Home from './pages/Home'
+import Product from './pages/Product'
+import Contact from './pages/Contact'
+import About from './pages/About'
 
 const App = () => {
   return (
-    <div className='text-4xl bg-blue-500 p-5 text-center text-amber-50'>
-      I am Chhay Lihour
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<RootLayout />}>
+          <Route path='/' element={<Home />}></Route>
+          <Route path='/product' element={<Product />}></Route>
+          <Route path='/contact' element={<Contact />}></Route>
+          <Route path='/about' element={<About />}></Route>
+        </Route>
+      </Routes>
+    </BrowserRouter>
   )
 }
 
