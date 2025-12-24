@@ -1,17 +1,12 @@
-import { Link, Outlet } from 'react-router-dom'
+import { Outlet } from 'react-router-dom'
+import TopBar from '../components/TopBar'
+import Header from '../components/Header'
 
 const RootLayout = () => {
   return (
     <>
-        <div className='text-white font-rubik text-center py-1 bg-[#171717] '>
-            🚚 Free shipping on orders over <span className='text-red-500'>50$</span> 🌟
-        </div>
-
-        <Link to={"/"}></Link>
-        <Link to={"/product"}></Link>
-        <Link to={"/contact"}></Link>
-        <Link to={"/about"}></Link>
-        
+        <TopBar />
+        <Header />
         <Outlet />
 
     </>
