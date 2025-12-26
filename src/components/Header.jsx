@@ -1,25 +1,34 @@
+import { useState } from "react"
 
 const Header = () => {
+
+    const [isActiveNavbar, setIsActiveNavbar] = useState(false)
+
     return (
         <>
 
-            <header className="bg-white shadow-md font-rubik flex items-center justify-between py-4 px-8 lg:px-40">
-                <div className="cursor-pointer">
+            <header className="bg-white shadow-md font-rubik flex items-center justify-between py-4 px-4 lg:px-40">
+                <div className="cursor-pointer flex items-center gap-2">
+                    <button onClick={() => setIsActiveNavbar(true)} className="cursor-pointer inline-block lg:hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6 hover:text-secondary active:text-gray-400 transition-all duration-300 ease-in-out">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                        </svg>
+                    </button>
                     <h2 className="font-bold text-2xl text-primary">JKJ Store</h2>
                 </div>
 
-                <ul className="flex gap-4 items-center">
+                <ul className="lg:flex gap-4 items-center hidden">
                     <li>
-                        <a href="" className="hover:underline hover:decoration-secondary transition-all duration-300 ease">Home</a>
+                        <a href="/" className="hover:underline hover:decoration-secondary transition-all duration-300 ease">Home</a>
                     </li>
                     <li>
-                        <a href="" className="hover:underline hover:decoration-secondary transition-all duration-300 ease">Product</a>
+                        <a href="/product" className="hover:underline hover:decoration-secondary transition-all duration-300 ease">Product</a>
                     </li>
                     <li>
-                        <a href="" className="hover:underline hover:decoration-secondary transition-all duration-300 ease">Contact</a>
+                        <a href="/contact" className="hover:underline hover:decoration-secondary transition-all duration-300 ease">Contact</a>
                     </li>
                     <li>
-                        <a href="" className="hover:underline hover:decoration-secondary transition-all duration-300 ease">About</a>
+                        <a href="/about" className="hover:underline hover:decoration-secondary transition-all duration-300 ease">About</a>
                     </li>
                 </ul>
 
@@ -45,6 +54,23 @@ const Header = () => {
 
                 </div>
 
+            </header>
+
+            <header className={`${isActiveNavbar ? 'left-0' : '-left-full'} absolute top-0  pt-5 px-6 bg-primary text-white w-65 min-h-screen transition-all duration-300 ease-in-out`}>
+                <div className="flex justify-end">
+                    <button onClick={() => setIsActiveNavbar(false)} className="cursor-pointer border border-gray-500 border-dashed p-1.5 rounded-full hover:bg-gray-700 transition-all duration-300 ease-in-out">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+
+                <div className="flex flex-col mt-6 font-rubik">
+                    <a href="/" className="p-2 hover:bg-gray-700 rounded-lg transition-all duration-300 ease-in-out">+Home</a>
+                    <a href="/product" className="p-2 hover:bg-gray-700 rounded-lg transition-all duration-300 ease-in-out">+Product</a>
+                    <a href="/contact" className="p-2 hover:bg-gray-700 rounded-lg transition-all duration-300 ease-in-out">+Contact</a>
+                    <a href="about" className="p-2 hover:bg-gray-700 rounded-lg transition-all duration-300 ease-in-out">+About</a>
+                </div>
             </header>
 
         </>
