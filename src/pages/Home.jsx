@@ -21,7 +21,7 @@ const Home = () => {
   return (
     <div className='font-rubik'>
       {/* Hero Section */}
-      <div style={{ backgroundImage:"url('./public/slide_02.jpg')"}} className="bg-secondary bg-no-repeat bg-cover lg:bg-contain bg-center flex items-center h-screen px-4 lg:px-40">
+      <div style={{ backgroundImage:"url('./slide_02.jpg')"}} className="bg-secondary bg-no-repeat bg-cover lg:bg-contain bg-center flex items-center h-screen px-4 lg:px-40">
         <div>
           <h2 className='font-bold text-xl'>New Collection</h2>
           <h1 className='font-bold text-6xl mb-2'>Luxury Without <br /> Labels</h1>
