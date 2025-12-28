@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { NavLink } from "react-router-dom"
 
 const Header = () => {
 
@@ -7,7 +8,7 @@ const Header = () => {
     return (
         <>
 
-            <header className="bg-white shadow-md font-rubik flex items-center justify-between py-4 px-4 lg:px-40">
+            <header className="bg-white z-40 shadow-md font-rubik flex items-center justify-between py-4 px-4 lg:px-40">
                 <div className="cursor-pointer flex items-center gap-2">
                     <button onClick={() => setIsActiveNavbar(true)} className="cursor-pointer inline-block lg:hidden">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6 hover:text-secondary active:text-gray-400 transition-all duration-300 ease-in-out">
@@ -19,16 +20,16 @@ const Header = () => {
 
                 <ul className="lg:flex gap-4 items-center hidden">
                     <li>
-                        <a href="/" className="hover:underline hover:decoration-secondary transition-all duration-300 ease">Home</a>
+                        <NavLink to="/" className="px-3 py-2 rounded-lg aria-[current=page]:bg-secondary  transition-all duration-300 ease">Home</NavLink>
                     </li>
                     <li>
-                        <a href="/product" className="hover:underline hover:decoration-secondary transition-all duration-300 ease">Product</a>
+                        <NavLink to="/product" className="px-3 py-2 rounded-lg aria-[current=page]:bg-secondary transition-all duration-300 ease">Product</NavLink>
                     </li>
                     <li>
-                        <a href="/contact" className="hover:underline hover:decoration-secondary transition-all duration-300 ease">Contact</a>
+                        <NavLink to="/contact" className="px-3 py-2 rounded-lg aria-[current=page]:bg-secondary transition-all duration-300 ease">Contact</NavLink>
                     </li>
                     <li>
-                        <a href="/about" className="hover:underline hover:decoration-secondary transition-all duration-300 ease">About</a>
+                        <NavLink to="/about" className="px-3 py-2 rounded-lg aria-[current=page]:bg-secondary transition-all duration-300 ease">About</NavLink>
                     </li>
                 </ul>
 
@@ -56,7 +57,7 @@ const Header = () => {
 
             </header>
 
-            <header className={`${isActiveNavbar ? 'left-0' : '-left-full'} absolute top-0  pt-5 px-6 bg-primary text-white w-65 min-h-screen transition-all duration-300 ease-in-out`}>
+            <header className={`${isActiveNavbar ? 'left-0' : '-left-full'} fixed top-0 z-50 pt-5 px-6 bg-primary text-white w-65 min-h-screen transition-all duration-300 ease-in-out`}>
                 <div className="flex justify-end">
                     <button onClick={() => setIsActiveNavbar(false)} className="cursor-pointer border border-gray-500 border-dashed p-1.5 rounded-full hover:bg-gray-700 transition-all duration-300 ease-in-out">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
