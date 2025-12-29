@@ -67,10 +67,40 @@ const Header = () => {
                 </div>
 
                 <div className="flex flex-col mt-6 font-rubik">
-                    <a href="/" className="p-2 hover:bg-gray-700 rounded-lg transition-all duration-300 ease-in-out">+Home</a>
-                    <a href="/product" className="p-2 hover:bg-gray-700 rounded-lg transition-all duration-300 ease-in-out">+Product</a>
-                    <a href="/contact" className="p-2 hover:bg-gray-700 rounded-lg transition-all duration-300 ease-in-out">+Contact</a>
-                    <a href="about" className="p-2 hover:bg-gray-700 rounded-lg transition-all duration-300 ease-in-out">+About</a>
+                    <div className="flex flex-col mt-4 font-rubik">
+                        <NavLink
+                            to="/"
+                            onClick={() => setIsActiveNavbar(false)}
+                            className="p-2 hover:bg-gray-700 rounded-lg transition"
+                        >
+                            +Home
+                        </NavLink>
+
+                        <NavLink
+                            to="/product"
+                            onClick={() => setIsActiveNavbar(false)}
+                            className="p-2 hover:bg-gray-700 rounded-lg transition"
+                        >
+                            +Product
+                        </NavLink>
+
+                        <NavLink
+                            to="/contact"
+                            onClick={() => setIsActiveNavbar(false)}
+                            className="p-2 hover:bg-gray-700 rounded-lg transition"
+                        >
+                            +Contact
+                        </NavLink>
+
+                        <NavLink
+                            to="/about"
+                            onClick={() => setIsActiveNavbar(false)}
+                            className="p-2 hover:bg-gray-700 rounded-lg transition"
+                        >
+                            +About
+                        </NavLink>
+                    </div>
+
                 </div>
             </header>
 
