@@ -6,7 +6,7 @@ const About = () => {
         <div>
           <img
             className="rounded-lg w-full h-full"
-            src="./public/about_us.jpg"
+            src="./about_us.jpg"
             alt="About us image"
           />
         </div>
