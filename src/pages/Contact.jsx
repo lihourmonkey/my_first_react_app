@@ -43,6 +43,7 @@ const Contact = () => {
 
         <div className="my-2 flex justify-end">
           <button className="bg-primary text-white px-4 py-2 rounded-lg cursor-pointer hover:bg-gray-700 transition-all ease-in-out">
+
             Submit
           </button>
         </div>
